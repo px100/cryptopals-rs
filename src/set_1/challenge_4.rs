@@ -67,7 +67,7 @@ mod tests {
 
   #[test]
   fn test_detect_single_character_xor() {
-    let path = Path::new("data/4.txt");
+    let path = Path::new("src/set_1/data/4.txt");
     let (key, result) = detect_single_character_xor(&path);
     assert_eq!(key, 53);
   }

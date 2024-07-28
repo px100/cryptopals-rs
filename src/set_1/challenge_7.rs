@@ -38,14 +38,14 @@ mod tests {
 
   #[test]
   fn test_aes_in_ecb_mode() -> Result<(), AesEcbError> {
-    let file_content = fs::read_to_string("data/7.txt")
+    let file_content = fs::read_to_string("src/set_1/data/7.txt")
       .map(|s| s.replace('\n', ""))
       .expect("Failed to read file");
     let bytes = base64::engine::general_purpose::STANDARD_NO_PAD
       .decode(file_content)
       .expect("Failed to decode base64 data");
     let key_stream = b"YELLOW SUBMARINE";
-    let expected = fs::read_to_string("data/7s.txt")
+    let expected = fs::read_to_string("src/set_1/data/7s.txt")
       .expect("Failed to read file");
     let actual = aes_in_ecb_mode(key_stream, &bytes)?;
     let actual_str = String::from_utf8(actual)?;
