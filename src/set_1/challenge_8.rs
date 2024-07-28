@@ -14,7 +14,7 @@ pub enum DetectEcbError {
 // Detect AES in ECB mode
 // https://cryptopals.com/sets/1/challenges/8
 fn detect_aes_in_ecb_mode() -> Result<Option<String>, DetectEcbError> {
-  let file_content = fs::read_to_string("data/8.txt")?;
+  let file_content = fs::read_to_string("src/set_1/data/8.txt")?;
   for line in file_content.lines() {
     let decoded = hex::decode(line)?;
     let chunks: Vec<_> = decoded.chunks(16).collect();

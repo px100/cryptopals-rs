@@ -118,7 +118,7 @@ mod tests {
 
   #[test]
   fn test_break_repeating_key_xor() {
-    let path = Path::new("data/6.txt");
+    let path = Path::new("src/set_1/data/6.txt");
     let content = fs::read_to_string(path).expect("File not found!");
     let decoded_content = match decode_base64(&content) {
       Some(data) => data,
